@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #111;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+header .logo {
+    font-weight: bold;
+}
+
+nav a {
+    color: #fff;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f4f4f4;
+}
+
+.hero .cta {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #0077cc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.highlight, .newsletter {
+    padding: 2rem;
+    text-align: center;
+}
+
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.game {
+    max-width: 300px;
+    text-align: center;
+}
+
+.services {
+    list-style: square;
+    padding: 2rem;
+}
+
+footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .game-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
