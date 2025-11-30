@@ -1,86 +1,441 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* 
+   FourthLayer Games - Warm & Friendly Theme 
+   Design System: "Cozy Digital"
+*/
+
+:root {
+    /* Color Palette */
+    --primary: #FF8A65;
+    /* Warm Coral */
+    --primary-dark: #E64A19;
+    /* Deep Orange */
+    --secondary: #FFD54F;
+    /* Sunny Yellow */
+    --accent: #4DB6AC;
+    /* Soft Teal (Balance) */
+
+    --bg-body: #FFF8E1;
+    /* Creamy White */
+    --bg-card: #FFFFFF;
+    /* Pure White */
+    --bg-footer: #3E2723;
+    /* Dark Warm Brown */
+
+    --text-main: #3E2723;
+    /* Dark Brown (Softer than black) */
+    --text-muted: #5D4037;
+    /* Medium Brown */
+    --text-light: #FFF8E1;
+    /* Cream for dark backgrounds */
+
+    /* Spacing & Layout */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --shadow-sm: 0 2px 8px rgba(62, 39, 35, 0.05);
+    --shadow-md: 0 8px 24px rgba(62, 39, 35, 0.1);
+    --shadow-hover: 0 12px 32px rgba(230, 74, 25, 0.2);
+
+    --container-width: 1200px;
 }
 
+/* --- Reset & Base --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Outfit', 'Segoe UI', sans-serif;
+    /* Friendly, rounded sans */
+    background-color: --bg-body;
+    background: linear-gradient(to bottom, #FFF8E1, #FFF3E0);
+    color: var(--text-main);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 0;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: var(--radius-sm);
+}
+
+/* --- Layout Utilities --- */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Components --- */
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    /* Pill shape for friendliness */
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-outline {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Header */
 header {
-    background: #111;
-    color: #fff;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+    padding: 1rem 0;
+}
+
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
 }
 
-header .logo {
-    font-weight: bold;
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    letter-spacing: -0.5px;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
 }
 
 nav a {
-    color: #fff;
-    margin-right: 1rem;
-    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    position: relative;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: var(--primary);
 }
 
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
 .hero {
     text-align: center;
-    padding: 4rem 2rem;
-    background: #f4f4f4;
+    padding: 6rem 1rem;
+    background-image: radial-gradient(circle at 80% 20%, rgba(255, 213, 79, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(255, 138, 101, 0.1) 0%, transparent 50%);
 }
 
-.hero .cta {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #0077cc;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.highlight, .newsletter {
-    padding: 2rem;
-    text-align: center;
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem;
 }
 
+/* Cards (Games) */
 .game-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.game-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.game-image-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.game-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: 0;
+}
+
+.game-card:hover .game-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.game-tags {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.game-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Featured Section (Home) */
+.highlight {
+    padding: 4rem 0;
+    background: white;
+    border-radius: var(--radius-lg);
+    margin: 2rem auto;
+    box-shadow: var(--shadow-sm);
+}
+
+#featured-games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.featured-card {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: var(--shadow-md);
+}
+
+.featured-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.featured-content {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(62, 39, 35, 0.9), transparent);
+    width: 100%;
+    padding: 2rem;
+    color: white;
+}
+
+.featured-content h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.featured-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+}
+
+/* Newsletter */
+.newsletter {
+    background: var(--primary);
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin: 4rem auto;
+}
+
+.newsletter h2 {
+    color: white;
+}
+
+.newsletter p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+.newsletter form {
+    display: flex;
     justify-content: center;
-    padding: 2rem;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.game {
-    max-width: 300px;
-    text-align: center;
-}
-
-.services {
-    list-style: square;
-    padding: 2rem;
-}
-
-footer {
-    background: #111;
-    color: #fff;
-    text-align: center;
+.newsletter input {
     padding: 1rem;
+    border-radius: 50px;
+    border: none;
+    flex-grow: 1;
+    font-family: inherit;
 }
 
-@media (max-width: 600px) {
-    nav a {
-        display: block;
-        margin: 0.5rem 0;
+.newsletter button {
+    background: var(--bg-footer);
+    color: white;
+    border: none;
+    padding: 0 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter button:hover {
+    background: #2D1B18;
+}
+
+/* Footer */
+footer {
+    background: var(--bg-footer);
+    color: var(--text-light);
+    padding: 4rem 0;
+    margin-top: 4rem;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social a {
+    color: var(--text-light);
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+.social a:hover {
+    opacity: 1;
+    color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    .game-list {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .newsletter form {
         flex-direction: column;
-        align-items: center;
+    }
+
+    .newsletter button {
+        padding: 1rem;
     }
 }
