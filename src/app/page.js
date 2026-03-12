@@ -89,10 +89,10 @@ export default function Home() {
 
       <main className={styles.container}>
         <div className={styles.hero}>
-          <h1 className={styles.title}>Welcome to fourthlayer ✨</h1>
+          <h1 className={styles.title}>Welcome to fourthlayer</h1>
           <p className={styles.subtitle}>
             Building magical experiences through systems, games, and the web.
-            Explore our cute little corner of the internet! 🌸
+            Explore our cute little corner of the internet!
           </p>
         </div>
 

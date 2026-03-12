@@ -6,7 +6,7 @@ export default function Navbar() {
         <nav className={styles.navbar}>
             <div className={styles.logoContainer}>
                 <Link href="/" className={styles.logo}>
-                    fourthlayer ✨
+                    fourthlayer
                 </Link>
             </div>
             <div className={styles.links}>

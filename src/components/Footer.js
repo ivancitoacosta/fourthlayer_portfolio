@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <footer className={styles.footer}>
             <p className={styles.text}>
-                © {year} fourthlayer. All rights reserved. 🌸
+                © {year} fourthlayer. All rights reserved.
             </p>
         </footer>
     );
