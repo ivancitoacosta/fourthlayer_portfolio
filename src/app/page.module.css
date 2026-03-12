@@ -1,0 +1,215 @@
+.pageWrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.bgLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  background-size: 400% 400%;
+  animation: bgPan 15s ease infinite;
+}
+
+.bgLayer.active {
+  opacity: 1;
+}
+
+/* 1. Default Background (Mixed Pastel) */
+.bgLayer.default {
+  background-image: linear-gradient(120deg, #ffc8dd 0%, #bde0fe 33%, #fcf4dd 66%, #cdb4db 100%);
+}
+
+/* 2. Systems Background (Blues and Cyans) */
+.bgLayer.systems {
+  background-image: linear-gradient(120deg, #a2d2ff 0%, #bde0fe 50%, #cdb4db 100%);
+}
+
+/* 3. Games Background (Pinks and Purples) */
+.bgLayer.games {
+  background-image: linear-gradient(120deg, #ffafcc 0%, #ffc8dd 50%, #cdb4db 100%);
+}
+
+/* 4. Web Background (Yellows and Mints) */
+.bgLayer.web {
+  background-image: linear-gradient(120deg, #fcf4dd 0%, #ffef96 50%, #bde0fe 100%);
+}
+
+@keyframes bgPan {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  margin-bottom: 4rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ff9eb5;
+  /* Brighter pastel pink for title */
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(255, 158, 181, 0.2);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #8c7a80;
+  max-width: 600px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 30px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 4px solid transparent;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(92, 75, 81, 0.15);
+}
+
+.systems {
+  border-color: var(--accent-blue);
+  background: linear-gradient(to bottom right, #ffffff, var(--accent-blue));
+}
+
+.systems .icon {
+  color: #5aa9e6;
+}
+
+.games {
+  border-color: var(--accent-pink);
+  background: linear-gradient(to bottom right, #ffffff, var(--accent-pink));
+}
+
+.games .icon {
+  color: #ff8fab;
+}
+
+.web {
+  border-color: var(--accent-yellow);
+  background: linear-gradient(to bottom right, #ffffff, var(--accent-yellow));
+}
+
+.web .icon {
+  color: #ffd166;
+}
+
+.icon {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.cardDesc {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #6d5b61;
+}
+
+.button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover .button {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
