@@ -60,10 +60,13 @@ export default function Home() {
     const isActive = activeTheme === themeName;
     const Emojis = themeEmojis[themeName];
 
+    // the user requested to disable the emojis when the theme is default
+    const shouldShowEmojis = isActive && themeName !== 'default';
+
     return (
       <div className={`${styles.bgLayer} ${styles[themeName]} ${isActive ? styles.active : ''}`}>
         <AnimatePresence>
-          {mounted && isActive && (
+          {mounted && shouldShowEmojis && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

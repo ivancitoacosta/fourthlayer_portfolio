@@ -33,7 +33,7 @@
 
 /* 3. Games Background (Solid Green) */
 .bgLayer.games {
-  background-color: #86efac;
+  background-color: #b3f3cb;
 }
 
 /* 4. Web Background (Solid Yellow) */
@@ -134,7 +134,8 @@
 }
 
 .systems {
-  border-color: rgba(59, 130, 246, 0.4); /* Softer blue border */
+  border-color: rgba(59, 130, 246, 0.4);
+  /* Softer blue border */
   background-color: var(--card-bg);
 }
 
@@ -143,7 +144,8 @@
 }
 
 .games {
-  border-color: rgba(16, 185, 129, 0.4); /* Softer green border */
+  border-color: rgba(16, 185, 129, 0.4);
+  /* Softer green border */
   background-color: var(--card-bg);
 }
 
