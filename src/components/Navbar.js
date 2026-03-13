@@ -10,7 +10,8 @@ export default function Navbar() {
                 </Link>
             </div>
             <div className={styles.links}>
-                {/* Future links could go here */}
+                <Link href="/games" className={styles.navLink}>Games</Link>
+                <Link href="/web" className={styles.navLink}>Web</Link>
             </div>
         </nav>
     );

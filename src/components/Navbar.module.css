@@ -31,3 +31,16 @@
     display: flex;
     gap: 1.5rem;
 }
+
+.navLink {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.navLink:hover {
+    color: #ff9eb5;
+    transform: translateY(-2px);
+}

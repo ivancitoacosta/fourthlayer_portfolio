@@ -1,0 +1,114 @@
+.pageWrapper {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.bgLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: opacity 0.8s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bgLayer.active {
+  opacity: 1;
+}
+
+/* Base Background Settings */
+.bgLayer.web {
+  background-color: #bae6fd;
+}
+
+.container {
+  flex: 1;
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+}
+
+.backButton {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #64748b;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+}
+
+.backButton:hover {
+  color: #334155;
+  transform: translateX(-5px);
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  color: #64748b;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Animations that apply on page load */
+.hero {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.grid {
+  animation: fadeUp 1s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

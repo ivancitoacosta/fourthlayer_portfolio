@@ -7,10 +7,12 @@
   /* Soft dark brown/slate for text */
   --card-bg: #ffffff;
 
-  --accent-blue: #bde0fe;
-  /* Pastel blue */
+  --accent-blue: #3b82f6;
+  /* Strong blue */
   --accent-pink: #ffc8dd;
   /* Pastel pink */
+  --accent-green: #10b981;
+  /* Strong green */
   --accent-yellow: #fcf4dd;
   /* Pastel yellow / minty yellow */
   --accent-mint: #cdb4db;

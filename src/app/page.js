@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import styles from './page.module.css';
 
 const themeEmojis = {
@@ -108,7 +109,7 @@ export default function Home() {
             <p className={styles.cardDesc}>
               Robust and adorable backend systems that keep everything running smoothly and happily!
             </p>
-            <button className={styles.button}>Explore Systems 🚀</button>
+            <button className={styles.button} disabled>Coming Soon ✨</button>
           </div>
 
           {/* Games Card */}
@@ -122,7 +123,7 @@ export default function Home() {
             <p className={styles.cardDesc}>
               Fun, colorful, and engaging games that will bring a smile to your face!
             </p>
-            <button className={styles.button}>Play Games 🎲</button>
+            <Link href="/games" className={styles.button}>Play Games 🎲</Link>
           </div>
 
           {/* Web Card */}
@@ -136,7 +137,7 @@ export default function Home() {
             <p className={styles.cardDesc}>
               Beautiful, responsive, and super cute web applications tailored just for you!
             </p>
-            <button className={styles.button}>View Web 🎨</button>
+            <Link href="/web" className={styles.button}>View Web 🎨</Link>
           </div>
         </div>
       </main>

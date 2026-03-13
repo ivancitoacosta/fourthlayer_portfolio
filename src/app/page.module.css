@@ -15,46 +15,30 @@
   z-index: 0;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
-  background-size: 400% 400%;
-  animation: bgPan 15s ease infinite;
 }
 
 .bgLayer.active {
   opacity: 1;
 }
 
-/* 1. Default Background (Mixed Pastel) */
+/* 1. Default Background (Solid Pastel) */
 .bgLayer.default {
-  background-image: linear-gradient(120deg, #ffc8dd 0%, #bde0fe 33%, #fcf4dd 66%, #cdb4db 100%);
+  background-color: var(--bg-color);
 }
 
-/* 2. Systems Background (Blues and Cyans) */
+/* 2. Systems Background (Solid Blue) */
 .bgLayer.systems {
-  background-image: linear-gradient(120deg, #a2d2ff 0%, #bde0fe 50%, #cdb4db 100%);
+  background-color: #bfdbfe;
 }
 
-/* 3. Games Background (Pinks and Purples) */
+/* 3. Games Background (Solid Green) */
 .bgLayer.games {
-  background-image: linear-gradient(120deg, #ffafcc 0%, #ffc8dd 50%, #cdb4db 100%);
+  background-color: #86efac;
 }
 
-/* 4. Web Background (Yellows and Mints) */
+/* 4. Web Background (Solid Yellow) */
 .bgLayer.web {
-  background-image: linear-gradient(120deg, #fcf4dd 0%, #ffef96 50%, #bde0fe 100%);
-}
-
-@keyframes bgPan {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+  background-color: #fef9c3;
 }
 
 
@@ -150,8 +134,8 @@
 }
 
 .systems {
-  border-color: var(--accent-blue);
-  background: linear-gradient(to bottom right, #ffffff, var(--accent-blue));
+  border-color: rgba(59, 130, 246, 0.4); /* Softer blue border */
+  background-color: var(--card-bg);
 }
 
 .systems .icon {
@@ -159,17 +143,17 @@
 }
 
 .games {
-  border-color: var(--accent-pink);
-  background: linear-gradient(to bottom right, #ffffff, var(--accent-pink));
+  border-color: rgba(16, 185, 129, 0.4); /* Softer green border */
+  background-color: var(--card-bg);
 }
 
 .games .icon {
-  color: #ff8fab;
+  color: #8dedb5;
 }
 
 .web {
   border-color: var(--accent-yellow);
-  background: linear-gradient(to bottom right, #ffffff, var(--accent-yellow));
+  background-color: var(--card-bg);
 }
 
 .web .icon {
@@ -207,6 +191,10 @@
   cursor: pointer;
   transition: background 0.2s;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card:hover .button {
