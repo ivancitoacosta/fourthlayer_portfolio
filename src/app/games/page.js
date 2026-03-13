@@ -93,7 +93,6 @@ export default function Games() {
 
       <main className={styles.container}>
         <div className={styles.hero}>
-          <Link href="/" className={styles.backButton}>⬅ Back Home</Link>
           <h1 className={styles.title}>Games by Fourthlayer</h1>
           <p className={styles.subtitle}>
             Fun, colorful, and engaging games that will bring a smile to your face!

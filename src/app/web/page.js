@@ -93,7 +93,6 @@ export default function Web() {
 
       <main className={styles.container}>
         <div className={styles.hero}>
-          <Link href="/" className={styles.backButton}>⬅ Back Home</Link>
           <h1 className={styles.title}>Web by Fourthlayer</h1>
           <p className={styles.subtitle}>
             Beautiful, responsive, and super cute web applications tailored just for you!
